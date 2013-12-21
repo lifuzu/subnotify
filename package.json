@@ -1,0 +1,38 @@
+{
+  "name": "subnotify",
+  "version": "0.0.1",
+  "author": {
+    "name": "Richard Lee",
+    "email": "lifuzu@gmail.com"
+  },
+  "description": "Subscribe and then notify, written in pure JavaScript for node.js",
+  "main": "./main.js",
+  "engines": {
+    "node": ">=0.10.7"
+  },
+  "scripts": {
+    "start": "node_modules/casperjs/bin/casperjs main.js"
+  },
+  "dependencies": {
+    "jquery": "2.1.0",
+    "jsdom": "0.8.10",
+    "casperjs": "1.1.0"
+  },
+  "keywords": [
+    "subscribe",
+    "notify",
+    "webpage",
+    "detect",
+    "monitor"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/lifuzu/auto-loop/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/lifuzu/subnotify.git"
+  }
+}

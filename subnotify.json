@@ -1,0 +1,90 @@
+{
+  "subscriptions": [
+  	{
+  		"name": "maven",
+  		"url": "http://maven.apache.org/download.cgi",
+  		"cache": {
+  			"url": "http://www.github.com/lifuzu/subnotify.git",
+  			"scope": "div.section",
+  			"exclude": "#SelectMirror",
+  			"file": "records/maven.cache"
+  		},
+  		"criterion": [{
+  			"url": "http://www.github.com/lifuzu/subnotify.git",
+  			"selector": "div.section h2",
+  			"pattern": "\\d+.\\d+.\\d+",
+  			"file": "records/maven.criteria"
+  		}],
+  		"patterns": [
+  		  {
+  		  	"name": "version",
+  		  	"type": "string",
+  		  	"selector": "div.section h2",
+  		  	"pattern": "\\d+.\\d+.\\d+"
+  		  },
+  			{
+  				"name": "package",
+  				"type": "zip",
+  				"selector": "href",
+  				"pattern": "apache-maven-{version}-bin.zip"
+  			},
+  			{
+  				"name": "checksum",
+  				"type": "md5",
+  				"selector": "href",
+  				"pattern" : "{package}.md5"
+  			}
+  		]
+  	}
+  ],
+  "notifications": [
+    {
+	    "email" : {
+	    	"to": [
+	    		"rlee@book.com"
+	    	],
+	    	"template": "templates/notification.tmpl"
+	    }
+  	}
+  ]
+}
+
+div.xright:nth-child(2)
+ 
+"Last Published: 2013-12-20"
+
+div.section:nth-child(12)
+
+var element = document.getElementById("#SelectMirror");
+element.parentNode.removeChild(element);
+
+#SelectMirror
+#SelectMirror
+
+div.section:nth-child(13) > h3:nth-child(1) > a:nth-child(1)
+<p>This is the current stable version of Maven.</p>
+This is the current stable version of Maven.
+div.section:nth-child(13) > p:nth-child(2).
+
+div.section:nth-child(13) > h3:nth-child(1).text
+div.section:nth-child(13) > table:nth-child(3) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2) > a:nth-child(1).href
+
+signal:
+div.section:nth-child(13) > p:nth-child(2)
+text
+"This is the current stable version of Maven."
+
+version:
+div.section:nth-child(13) > h3:nth-child(1)
+text
+group(1)
+delimiter: ' '
+
+package: - download url
+div.section:nth-child(13) > table:nth-child(3) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2) > a:nth-child(1)
+href
+zip
+checksum: - url -> value
+div.section:nth-child(13) > table:nth-child(3) > tbody:nth-child(2) > tr:nth-child(4) > td:nth-child(3) > a:nth-child(1)
+href
+zip.md5
