@@ -14,9 +14,11 @@
     "start": "node_modules/casperjs/bin/casperjs main.js"
   },
   "dependencies": {
-    "jquery": "2.1.0",
+    "jquery": "2.1.0-beta3",
     "jsdom": "0.8.10",
-    "casperjs": "1.1.0"
+    "casperjs": "1.1.0-beta3",
+    "email-templates": "0.1.1",
+    "nodemailer": "0.5.15"
   },
   "keywords": [
     "subscribe",

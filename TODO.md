@@ -30,3 +30,4 @@
 	    	"other.js"
 	    ]
 ```
+4. to implement sqlite interface based on node, save cache, criterion, patterns' value in db;

@@ -4,35 +4,30 @@
       "name": "maven",
       "url": "http://maven.apache.org/download.cgi",
       "cache": {
-        "url": "http://www.github.com/lifuzu/subnotify.git",
         "scope": "div.section",
         "exclude": "#SelectMirror",
         "file": "records/maven.cache"
       },
       "criterion": [{
-        "url": "http://www.github.com/lifuzu/subnotify.git",
+        "name": "version",
         "selector": "div.section h2",
         "pattern": "\\d+.\\d+.\\d+",
-        "file": "records/maven.criteria"
+        "file": "records/maven.version.criteria"
       }],
       "patterns": [
         {
-          "name": "version",
-          "type": "string",
-          "selector": "div.section h2",
-          "pattern": "\\d+.\\d+.\\d+"
-        },
-        {
           "name": "package",
-          "type": "zip",
-          "selector": "href",
-          "pattern": "apache-maven-{version}-bin.zip"
+          "type": "url",
+          "selector": "div.section table a",
+          "attribute": "href",
+          "pattern": "http://.*apache-maven-{version}-bin.zip$"
         },
         {
           "name": "checksum",
-          "type": "md5",
-          "selector": "href",
-          "pattern" : "{package}.md5"
+          "type": "url",
+          "selector": "div.section table a",
+          "attribute": "href",
+          "pattern" : "http://.*apache-maven-{version}-bin.zip.md5$"
         }
       ]
     }
@@ -43,7 +38,14 @@
         "to": [
           "rlee@book.com"
         ],
-        "template": "templates/notification.tmpl"
+        "templates": "templates",
+        "smtp": {
+          "engine": "gmail",
+          "authentication": {
+            "username": "lifuzu@gmail.com",
+            "password": "******"
+          }
+        }
       }
     }
   ]
